@@ -26,4 +26,15 @@ fetch("http://api.openweathermap.org/data/2.5/weather?q="+searchCity+"&units=imp
     console.log(current.weather[0].icon);
     console.log(current.wind.speed);
     console.log(current.main.humidity);
+
+    var currentTemp = document.querySelector("#currentTemp");
+    var currentWind = document.querySelector("#currentWind");
+    var currentHumidity = document.querySelector("#currentHumidity");
+    var currentUV = document.querySelector("#currentUV");
+    var currentDay = document.querySelector("#currentDay");
+    
+    currentTemp.textContent= current.main.temp+" F";
+    currentWind.textContent=current.wind.speed+" mph";
+    currentHumidity.textContent=current.main.humidity+"%";
+    currentDay.textContent= searchCity+"  "+current.weather[0].icon;
 })
