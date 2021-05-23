@@ -23,7 +23,7 @@ var getWeather = function (city) {
 
                 var iconForecast = document.querySelector(".icon");
                 var forecastIcon = document.createElement('img');
-                forecastIcon.setAttribute("src", "https://openweathermap.org/img/wn/" + forecast.list[i].weather[0].icon + "@2x.png");
+                //forecastIcon.setAttribute("src", "https://openweathermap.org/img/wn/" + forecast.list[i].weather[0].icon + "@2x.png");
                 //iconForecast[i].appendChild(forecastIcon)
 
                 lookAhead.append(`
@@ -32,14 +32,14 @@ var getWeather = function (city) {
                     ${moment(forecast.list[i].dt_txt).format("L")}
                 </div>
                 <ul class="list-group list-group-flush ">
-                    <li class="list-group-item icon bg-info text-white">${forecastIcon.setAttribute("src", "https://openweathermap.org/img/wn/" + forecast.list[i].weather[0].icon + "@2x.png")}</li>
+                    <li class="list-group-item icon bg-info"><img src="https://openweathermap.org/img/wn/${forecast.list[i].weather[0].icon}@2x.png"></li>
                     <li class="list-group-item temp bg-info text-white">Temp: ${forecast.list[i].main.temp} F</li>
                     <li class="list-group-item wind bg-info text-white">Wind Speed: ${forecast.list[i].wind.speed} mph</li>
                     <li class="list-group-item humidity bg-info text-white">Humidity: ${forecast.list[i].main.humidity}%</li>
                 </ul>
                 </div>`);
 
-                //console.log(forecast);
+                console.log(forecast);
                 //console.log(moment(forecast.list[i].dt_txt).format("L"));
                 console.log(forecast.list[i].weather[0].icon);
 
