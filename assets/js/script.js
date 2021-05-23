@@ -32,7 +32,7 @@ var getWeather = function (city) {
                     ${moment(forecast.list[i].dt_txt).format("L")}
                 </div>
                 <ul class="list-group list-group-flush ">
-                    <li class="list-group-item icon bg-info text-white">${forecastIcon.setAttribute("src", "http://openweathermap.org/img/wn/" + forecast.list[i].weather[0].icon + "@2x.png")}</li>
+                    <li class="list-group-item icon bg-info text-white">${forecastIcon.setAttribute("src", "https://openweathermap.org/img/wn/" + forecast.list[i].weather[0].icon + "@2x.png")}</li>
                     <li class="list-group-item temp bg-info text-white">Temp: ${forecast.list[i].main.temp} F</li>
                     <li class="list-group-item wind bg-info text-white">Wind Speed: ${forecast.list[i].wind.speed} mph</li>
                     <li class="list-group-item humidity bg-info text-white">Humidity: ${forecast.list[i].main.humidity}%</li>
