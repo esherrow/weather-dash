@@ -12,7 +12,7 @@ var getWeather = function (city) {
     localStorage.setItem("city", JSON.stringify(cities))
     loadCity();
     fetch(
-            'http://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=imperial&cnt=40&appid=650dce3c894fd8e8f9f02e1e10ba6800'
+            'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=imperial&cnt=40&appid=650dce3c894fd8e8f9f02e1e10ba6800'
         )
         .then(function (forecast) {
             return forecast.json();
@@ -23,7 +23,7 @@ var getWeather = function (city) {
 
                 var iconForecast = document.querySelector(".icon");
                 var forecastIcon = document.createElement('img');
-                forecastIcon.setAttribute("src", "http://openweathermap.org/img/wn/" + forecast.list[i].weather[0].icon + "@2x.png");
+                forecastIcon.setAttribute("src", "https://openweathermap.org/img/wn/" + forecast.list[i].weather[0].icon + "@2x.png");
                 //iconForecast[i].appendChild(forecastIcon)
 
                 lookAhead.append(`
@@ -47,7 +47,7 @@ var getWeather = function (city) {
             }
         });
 
-    fetch("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=650dce3c894fd8e8f9f02e1e10ba6800")
+    fetch("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=650dce3c894fd8e8f9f02e1e10ba6800")
         .then(function (current) {
             return current.json();
         })
@@ -59,7 +59,7 @@ var getWeather = function (city) {
             var currentHumidity = document.querySelector("#currentHumidity");
             var currentDay = document.querySelector("#currentDay");
             var currentIcon = document.createElement('img');
-            currentIcon.setAttribute("src", "http://openweathermap.org/img/wn/" + current.weather[0].icon + "@2x.png")
+            currentIcon.setAttribute("src", "https://openweathermap.org/img/wn/" + current.weather[0].icon + "@2x.png")
             var lat = current.coord.lat;
             var lon = current.coord.lon;
 
